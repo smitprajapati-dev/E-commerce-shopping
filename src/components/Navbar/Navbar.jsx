@@ -5,6 +5,7 @@ import { BsFillCloudSunFill } from "react-icons/bs";
 import { FiSun } from "react-icons/fi";
 import { RxCross2 } from "react-icons/rx";
 import MyContext from "../../context/Data/MyContext";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -18,6 +19,7 @@ const Navbar = () => {
     localStorage.clear("user");
     window.location.href = "/login";
   };
+  const cartItems = useSelector((state) => state.cart)
   return (
     <div>
       <Transition.Root show={open} as={Fragment}>
@@ -317,7 +319,7 @@ const Navbar = () => {
                       className="ml-2 text-sm font-medium text-gray-700 group-"
                       style={{ color: mode === "dark" ? "white" : "" }}
                     >
-                      0
+                      {cartItems.length}
                     </span>
                     <span className="sr-only">items in cart, view bag</span>
                   </Link>
