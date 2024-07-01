@@ -373,7 +373,7 @@ function DashboardTab() {
                 </h1>
                 <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                   {user.map((item, index) => {
-                    const {name, uid, email,date} = item;
+                    const { name, uid, email, date } = item;
                     return (
                       <thead
                         className="text-xs text-black uppercase bg-gray-200 "
@@ -385,7 +385,7 @@ function DashboardTab() {
                       >
                         <tr>
                           <th scope="col" className="px-6 py-3">
-                            {index  + 1}
+                            {index + 1}
                           </th>
 
                           <th scope="col" className="px-6 py-3">
@@ -397,7 +397,6 @@ function DashboardTab() {
                           <th scope="col" className="px-6 py-3">
                             {uid}
                           </th>
-                          
                         </tr>
                       </thead>
                     );
